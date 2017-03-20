@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for p in posts %}
+<br>
+{{ p.render() | safe }}
+<br>
+{% if opost=='true' %}
+<a href="#" onclick="window.open('/comment/', 'yourWindowName', 'width=400,height=450');">Edit Post</a> ||
+<a href="#" onclick="window.open('/comment/', 'yourWindowName', 'width=400,height=450');">Delete Post</a> ||
+<a href="/comment/{{p.key().id()}}">Comments</a>
+</div>
+
+
+{% else %}
+
+<a href="/blog/editpost/{{p.key().id()}}">Edit Content</a> ||
+<a href="/blog/delete/{{p.key().id()}}">Delete Content</a>
+{% endif %}
+
+<p></p>
+{% endfor %}
+
+{% endblock %}

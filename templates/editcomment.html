@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="panel-style">
+    <h2>Edit Comment to {{comments.desiUser}}</h2>
+    <h3>{{comments.destSubject}}</h3>
+    <form method="post" action="/blog/editpost/{{comments.key().id()}}/?comment=true">
+        <textarea name="comments">{{ comments.comment }}</textarea>
+
+        <div class="error">
+            {{ error }}
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+    <form action="/blog/delete/{{comments.key().id()}}/?comment=true" method="post"
+          onsubmit="return confirm('Are you sure you want to delete this post?');">
+        <button id="delete" type="submit">
+            Delete This Post
+        </button>
+    </form>
+    <br>
+    <br>
+
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="panel-style">
+    <h2>Subject: {{ post.subject }}</h2>
+    <h3>Post from {{post.author}}</h3>
+    <div id="post" style="border:2px solid;text-align:left;">
+        {{post.content }}
+        </div>
+
+
+     <div class="error">
+      {{ error }}
+      </div>
+      <p></p>
+
+    <h3>Comments:</h3>
+    <div id="comments" style="border:2px solid;text-align:left;border-radius: 05px;">
+    {% for p in comments %}
+        {{ p.usernameid | safe }}: {{p.comment | safe }}
+        <br/>
+    {% endfor %}
+    </div>
+
+    <h2>Comment Post</h2>
+    Post Comment<br>
+    <form method="post">
+         <input type="text" name="comment">
+        Like Post?<input name="likeChecker" type="checkbox" checked="false">
+        <input type="hidden" name="desiUser" value="{{post.author}}">
+        <input type="hidden" name="destSubject" value="{{post.subject}}">
+        <br>
+        <button type="submit">Post Comment</button>
+    </form>
+
+    <a href="/usercomment">view/edit comments
+    <br>
+    {% endblock %}
+</div>
+
