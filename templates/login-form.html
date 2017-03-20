@@ -1,47 +1,67 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/static/main.css"/>
+
     <title>Login Page for Multi-User Blog</title>
     <style type="text/css">
-      .label {text-align: right}
-      .error {color: red}
+        .label {
+            text-align: right
+        }
+
+        .error {
+            color: red
+        }
     </style>
 
-  </head>
+</head>
 
-  <body>
-    <h2>Login</h2>
+<body>
+<h2>Welcome to Multi-User Blog</h2>
+
+<div class="col-md-12 text-left text-uppercase">
+    <img src="http://unparalleledmedia.co.za/wp-content/uploads/2015/09/portfolioBG.jpg"
+         class="title-logo img-responsive" alt="LOGO">
+
     <form method="post">
-      <table>
-        <tr>
-          <td class="label">
-            Username
-          </td>
-          <td>
-            <input type="text" name="username" value="{{username}}">
-          </td>
-        </tr>
+        <table>
+            <tr>
+                <td class="label">
+                    Username
+                </td>
+                <td>
+                    <input type="text" name="username" value="{{username}}">
+                </td>
+            </tr>
 
-        <tr>
-          <td class="label">
-            Password
-          </td>
-          <td>
-            <input type="password" name="password" value="">
-          </td>
-        </tr>
-      </table>
+            <tr>
+                <br/>
+                <td class="label">
+                    Password
+                </td>
+                <td>
+                    <input type="password" name="password" value="">
+                </td>
+            </tr>
 
-      <div class="error">
-        {{error}}
-      </div>
+        </table>
 
-      <input type="submit">
+        <div class="error">
+            {{error}}
+        </div>
+        <br/>
+        <input type="submit">
     </form>
-  <p>
-      <a href="/signup"> Please register user!</a>
-  </p>
-  </body>
+    <p>
+        <a href="/signup"> Please register user!</a>
+    </p>
+</div>
+</body>
 
 </html>

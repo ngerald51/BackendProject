@@ -1,33 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link type="text/css" rel="stylesheet" href="/static/main.css" />
 
-  <title>Multi-User Blog</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/static/main.css"/>
+
+    <title>Multi-User Blog</title>
 </head>
 
+
+
 <body>
-  <a href="/blog" class="main-title">
-     {{user.name}}  Blog
-  </a>
+<div class="row">
+    <div class="col-md-3 text-left">
+        <img src="https://s-media-cache-ak0.pinimg.com/564x/0a/c7/82/0ac78210b0a2620d5a53eff64328bec3.jpg"
+             class="title-logo img-responsive"
+             alt="LOGO">
+    </div>
+    <div class="col-md-9 text-right text-uppercase">
 
-  <div class="login-area">
-    {% if user %}
-      {{user.name}} (<a class="login-link" href="/logout?username="{{user.name}}>logout</a>)
-      ||<a href="/blog/newpost"}>post new story</a>||<a href="/blog/?game=124">view other's post</a>
-    {% else %}
-      <a class="login-link" href="/login">login</a>
-      |
-      <a class="login-link" href="/signup">signup</a>
-    {% endif %}
-  </div>
+        <h1 class="title-super text-thin">
+            <a href="/blog" class="main-title">
+                {{user.name}} Blog</a>
+        </h1>
 
-  <div id="content">
-  {% block content %}
-  {% endblock %}
-  </div>
+        {% if user %}
+        {{user.name}} (<a class="login-link" href="/logout?username=" {{user.name}}>logout</a>)
+        ||<a href="/blog/newpost" }>post new story</a>||<a href="/blog/?opost=true">view other's post</a>
+        ||<a href="/usercomment">view/edit comments</a>
+        {% else %}
+        <a class="login-link" href="/login">login</a>
+        |
+        <a class="login-link" href="/signup">signup</a>
+        {% endif %}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div Text here</div>
+
+    <div class="col-md-12" style="background-image: url(http://www.jodihelmer.com/wordpress/wp-content/uploads/2014/01/desk-and-typewriter.jpg); height=10% class="img-responsive" alt="main image");>
+    <div style="background-image: url(http://www.jodihelmer.com/wordpress/wp-content/uploads/2014/01/desk-and-typewriter.jpg)); height: 300px; width: 400px;"></div>
+
+    </div>
+</div>
+
+<div class="login-area">
+
+</div>
+
+<div id="content">
+
+    {% block content %}
+    {% endblock %}
+</div>
 
 </body>
 
 </html>
-

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="border:2px solid;text-align:left;border-radius: 05px;">
+{% for c in comments %}
+<br/><br/>
+
+Said to {{c.desiUser | safe }}: Topic: {{c.destSubject | safe}}<br/>
+{{c.comment | safe }}
+<br/>
+<a href="/blog/editpost/{{c.key().id()}}/?comment=true">Edit Message</a> ||
+<a href="/blog/delete/{{c.key().id()}}/?comment=true">Delete Message</a>
+
+{% endfor %}
+</div>
+{% endblock %}
+
+

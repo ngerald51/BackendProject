@@ -21,3 +21,21 @@ indexes:
   properties:
   - name: date
     direction: desc
+
+- kind: commentDB
+  properties:
+  - name: commentDB.usernameid
+  - name: last_modified
+    direction: desc
+
+- kind: commentDB
+  properties:
+  - name: postid
+  - name: last_modified
+    direction: desc
+
+- kind: commentDB
+  properties:
+  - name: usernameid
+  - name: last_modified
+    direction: desc

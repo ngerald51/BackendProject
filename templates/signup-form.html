@@ -1,70 +1,92 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <title>Sign Up</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/static/main.css"/>
+
+    <title>Sign Up for Multi-Blog</title>
     <style type="text/css">
-      .label {text-align: right}
-      .error {color: red}
+        .label {
+            text-align: right
+        }
+
+        .error {
+            color: red
+        }
     </style>
 
-  </head>
+</head>
 
-  <body>
-    <h2>Signup</h2>
-    <form method="post">
-      <table>
-        <tr>
-          <td class="label">
-            Username
-          </td>
-          <td>
-            <input type="text" name="username" value="{{username}}">
-          </td>
-          <td class="error">
-            {{error_username}}
-          </td>
-        </tr>
+<body background="http://paper-backgrounds.com/textureimages/2012/06/pen-on-table-hd.jpg">
 
-        <tr>
-          <td class="label">
-            Password
-          </td>
-          <td>
-            <input type="password" name="password" value="">
-          </td>
-          <td class="error">
-            {{error_password}}
-          </td>
-        </tr>
 
-        <tr>
-          <td class="label">
-            Verify Password
-          </td>
-          <td>
-            <input type="password" name="verify" value="">
-          </td>
-          <td class="error">
-            {{error_verify}}
-          </td>
-        </tr>
+<div style="background-position:bottom left;text-align:left;" position:relative;>
+    <h2>User Sign Up for Multi-Blog</h2>
 
-        <tr>
-          <td class="label">
-            Email (optional)
-          </td>
-          <td>
-            <input type="text" name="email" value="{{email}}">
-          </td>
-          <td class="error">
-            {{error_email}}
-          </td>
-        </tr>
-      </table>
+    <div class="col-md-12 text-left text-uppercase" align="right">
+        <form method="post">
+            <table>
+                <tr>
+                    <td class="label">
+                        <b>Username</b>
+                    </td>
+                    <td>
+                        <input type="text" name="username" value="{{username}} " width=100px>
+                    </td>
 
-      <input type="submit">
-    </form>
-  </body>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        <b>Password</b>
+                    </td>
+                    <td>
+                        <input type="password" name="password" value="">
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        <b>Verify Password</b>
+                    </td>
+                    <td>
+                        <input type="password" name="verify" value="">
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        <b>Email (optional)</b>
+                    </td>
+                    <td>
+                        <input type="text" name="email" value="{{email}}">
+                    </td>
+
+                </tr>
+            </table>
+
+            <input type="submit">
+        </form>
+    </div>
+</div>
+
+<div class="error" align="right" color="red">
+
+
+        {{error_username}}<br/>
+        {{error_password}}<br/>
+        {{error_verify}}<br/>
+        {{error_email}}
+
+</div>
+
+</body>
 
 </html>
